@@ -6,11 +6,17 @@ class Stack {
         theseNumbers = listOf()
     }
 
-    fun addResultOfOperation(resultOfOperation: Double) {
+    // todo: make it immutable
+
+    fun addNumberOnTopOfIt(resultOfOperation: Double) {
         theseNumbers = listOf(resultOfOperation).plus(theseNumbers.toList())
     }
 
     fun getTheElementFromTheTopOfIt(): Double {
-        return theseNumbers.first()
+        val toReturn = theseNumbers.first()
+
+        theseNumbers.dropLast(1)
+
+        return toReturn
     }
 }

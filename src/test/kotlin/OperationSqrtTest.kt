@@ -8,9 +8,7 @@ internal class OperationSqrtTest {
 
         assertEquals("sqrt", operationUnderTheTest.operationLiteral())
 
-        operationUnderTheTest.addOperandAndKeepAddingUntilItFitsTheOperation(
-            InputElement("9")
-        )
+        operationUnderTheTest.addOperandAndKeepAddingUntilItFitsTheOperation(9.0)
 
         val stack = Stack()
 

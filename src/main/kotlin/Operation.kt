@@ -10,7 +10,7 @@ interface Operation {
      * method until false is returned.
      * This is how I encapsulate amount of parameters into the operation.
      */
-    fun addOperandAndKeepAddingUntilItFitsTheOperation(inputElement: InputElement): Boolean
+    fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean
 
     /**
      * I perform operation and insert the result in the Stack because this is how I want to see my

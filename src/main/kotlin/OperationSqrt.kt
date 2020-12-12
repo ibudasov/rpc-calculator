@@ -2,7 +2,7 @@ import kotlin.math.sqrt
 
 class OperationSqrt : Operation {
 
-    private var _operands: List<InputElement>
+    private var _operands: List<Double>
 
     init {
         _operands = listOf()
@@ -12,18 +12,14 @@ class OperationSqrt : Operation {
         return "sqrt"
     }
 
-    override fun addOperandAndKeepAddingUntilItFitsTheOperation(inputElement: InputElement): Boolean {
+    override fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean {
         if (_operands.count() == 1) {
             return false
         }
 
-        if (inputElement.isNumber()) {
-            _operands = listOf(inputElement)
-        } else {
-            throw Exception(inputElement.elementLiteral + " expected to be a number")
-        }
+        _operands = listOf(operand)
 
-        return false
+        return true
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
@@ -31,10 +27,10 @@ class OperationSqrt : Operation {
         var resultOfTheOperation = 0.0
 
         _operands.forEach {
-            resultOfTheOperation = sqrt(it.asNumber())
+            resultOfTheOperation = sqrt(it)
         }
 
-        stack.addResultOfOperation(resultOfTheOperation)
+        stack.addNumberOnTopOfIt(resultOfTheOperation)
 
         return stack
     }

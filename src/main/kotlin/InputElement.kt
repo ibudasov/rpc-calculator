@@ -16,8 +16,14 @@ class InputElement(val elementLiteral: String) {
         return parseDouble(elementLiteral)
     }
 
-    override fun toString(): String
-    {
+    fun isOperator(): Boolean {
+        if (elementLiteral == (OperationSqrt()).operationLiteral()) {
+            return true
+        }
+        return false
+    }
+
+    override fun toString(): String {
         return elementLiteral
     }
 }
