@@ -15,4 +15,9 @@ class InputElement(val elementLiteral: String) {
     fun asInteger(): Double {
         return parseDouble(elementLiteral)
     }
+
+    override fun toString(): String
+    {
+        return elementLiteral
+    }
 }
