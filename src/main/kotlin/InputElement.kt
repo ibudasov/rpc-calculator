@@ -1,7 +1,7 @@
 import java.lang.Double.parseDouble
 
 class InputElement(val elementLiteral: String) {
-    fun isInteger(): Boolean {
+    fun isNumber(): Boolean {
 
         try {
             parseDouble(elementLiteral)
@@ -12,7 +12,7 @@ class InputElement(val elementLiteral: String) {
         return true
     }
 
-    fun asInteger(): Double {
+    fun asNumber(): Double {
         return parseDouble(elementLiteral)
     }
 

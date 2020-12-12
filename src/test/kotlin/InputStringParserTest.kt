@@ -15,17 +15,17 @@ internal class InputStringParserTest {
         val parser = InputStringParser()
 
         assertEquals(
-            expected.first().isInteger(),
-            parser.parseIt(toBeParsed).first().isInteger()
+            expected.first().isNumber(),
+            parser.parseIt(toBeParsed).first().isNumber()
         )
         assertEquals(
             1.0,
-            parser.parseIt(toBeParsed).first().asInteger()
+            parser.parseIt(toBeParsed).first().asNumber()
         )
 
         assertEquals(
-            expected.last().isInteger(),
-            parser.parseIt(toBeParsed).last().isInteger()
+            expected.last().isNumber(),
+            parser.parseIt(toBeParsed).last().isNumber()
         )
         assertEquals(
             "sqrt",

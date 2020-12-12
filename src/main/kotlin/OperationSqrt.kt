@@ -17,7 +17,7 @@ class OperationSqrt : Operation {
             return false
         }
 
-        if (inputElement.isInteger()) {
+        if (inputElement.isNumber()) {
             _operands = listOf(inputElement)
         } else {
             throw Exception(inputElement.elementLiteral + " expected to be a number")
@@ -31,7 +31,7 @@ class OperationSqrt : Operation {
         var resultOfTheOperation = 0.0
 
         _operands.forEach {
-            resultOfTheOperation = sqrt(it.asInteger())
+            resultOfTheOperation = sqrt(it.asNumber())
         }
 
         stack.addResultOfOperation(resultOfTheOperation)
