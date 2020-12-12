@@ -1,3 +1,5 @@
+package Domain
+
 import java.lang.Double.parseDouble
 
 class InputElement(val elementLiteral: String) {

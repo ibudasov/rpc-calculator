@@ -1,3 +1,5 @@
+package Domain
+
 class Calculator {
 
     fun calculateThings(input: List<InputElement>): Stack {

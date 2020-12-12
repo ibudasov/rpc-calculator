@@ -1,7 +1,9 @@
+package Domain
+
 interface Operation {
 
     /**
-     * Operation literal is a textual representation of the operation.
+     * Domain.Operation literal is a textual representation of the operation.
      */
     fun operationLiteral(): String
 
@@ -13,7 +15,7 @@ interface Operation {
     fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean
 
     /**
-     * I perform operation and insert the result in the Stack because this is how I want to see my
+     * I perform operation and insert the result in the Domain.Stack because this is how I want to see my
      * abstraction:
      * - some operations insert the result into the stack
      * - some other operations insert nothing

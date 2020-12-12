@@ -1,3 +1,5 @@
+package Domain
+
 import org.junit.Test
 import kotlin.test.assertEquals
 

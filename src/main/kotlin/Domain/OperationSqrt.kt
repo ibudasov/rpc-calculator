@@ -1,3 +1,5 @@
+package Domain
+
 import kotlin.math.sqrt
 
 class OperationSqrt : Operation {

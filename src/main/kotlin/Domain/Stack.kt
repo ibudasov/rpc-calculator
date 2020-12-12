@@ -1,3 +1,5 @@
+package Domain
+
 class Stack {
 
     private var theseNumbers: List<Double>

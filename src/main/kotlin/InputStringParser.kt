@@ -1,3 +1,5 @@
+import Domain.InputElement
+
 class InputStringParser {
 
     fun parseIt(string: String): List<InputElement> {
@@ -5,7 +7,7 @@ class InputStringParser {
 
         val parsedToListOfInputElements = mutableListOf<InputElement>()
 
-        listOfLiterals.forEach{
+        listOfLiterals.forEach {
             parsedToListOfInputElements.add(InputElement(it))
         }
 

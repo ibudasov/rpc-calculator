@@ -1,6 +1,7 @@
+package Domain
+
 class OperationFactory {
-    fun createByLiteral(literal: String): Operation
-    {
+    fun createByLiteral(literal: String): Operation {
         if (literal == (OperationSqrt()).operationLiteral()) {
             return OperationSqrt()
         }
