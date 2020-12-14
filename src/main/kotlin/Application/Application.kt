@@ -1,3 +1,5 @@
+package Application
+
 import Domain.Calculator
 
 class Application {

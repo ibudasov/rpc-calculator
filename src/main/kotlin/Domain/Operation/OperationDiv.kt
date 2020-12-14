@@ -1,8 +1,8 @@
-package Domain
+package Domain.Operation
 
-import kotlin.math.sqrt
+import Domain.Stack
 
-class OperationSqrt : Operation {
+class OperationDiv : Operation {
 
     private var _operands: List<Double>
 
@@ -11,24 +11,19 @@ class OperationSqrt : Operation {
     }
 
     override fun operationLiteral(): String {
-        return "sqrt"
+        return "/"
     }
 
     override fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean {
         _operands = listOf(operand).plus(_operands)
 
-        return (_operands.count() < 1)
+        return (_operands.count() < 2)
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-
-        var resultOfTheOperation = 0.0
-
-        _operands.forEach {
-            resultOfTheOperation = sqrt(it)
-        }
-
-        stack.addNumberOnTopOfIt(resultOfTheOperation)
+        stack.addNumberOnTopOfIt(
+            _operands.first() / _operands.last()
+        )
 
         return stack
     }

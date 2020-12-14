@@ -1,4 +1,6 @@
-package Domain
+package Domain.Operation
+
+import Domain.Stack
 
 class OperationMinus : Operation {
 

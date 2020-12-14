@@ -1,5 +1,7 @@
 package Domain
 
+import Domain.Operation.OperationFactory
+import Domain.Operation.SorryCouldNotCreateOperatorByLiteral
 import java.lang.Double.parseDouble
 
 class InputElement(val elementLiteral: String) {
@@ -19,26 +21,12 @@ class InputElement(val elementLiteral: String) {
     }
 
     fun isOperator(): Boolean {
-
-        // todo: logic duplication with OperationFactory
-
-        if (elementLiteral == (OperationSqrt()).operationLiteral()) {
-            return true
+        return try {
+            OperationFactory().createByLiteral(elementLiteral)
+            true
+        } catch (e: SorryCouldNotCreateOperatorByLiteral) {
+            false
         }
-
-        if (elementLiteral == (OperationPlus()).operationLiteral()) {
-            return true
-        }
-
-        if (elementLiteral == (OperationTimes()).operationLiteral()) {
-            return true
-        }
-
-        if (elementLiteral == (OperationMinus()).operationLiteral()) {
-            return true
-        }
-
-        return false
     }
 
     override fun toString(): String {

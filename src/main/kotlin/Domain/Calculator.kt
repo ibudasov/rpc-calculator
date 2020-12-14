@@ -1,5 +1,7 @@
 package Domain
 
+import Domain.Operation.OperationFactory
+
 class Calculator {
 
     fun calculateThings(input: List<InputElement>): Stack {

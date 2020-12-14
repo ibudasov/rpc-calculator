@@ -1,9 +1,11 @@
-package Domain
+package Domain.Operation
+
+import Domain.Stack
 
 interface Operation {
 
     /**
-     * Domain.Operation literal is a textual representation of the operation.
+     * Domain.Operation.Operation literal is a textual representation of the operation.
      */
     fun operationLiteral(): String
 

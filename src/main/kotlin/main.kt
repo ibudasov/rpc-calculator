@@ -1,3 +1,5 @@
+import Application.Application
+
 fun main(args: Array<String>) {
     println("What would be your input?")
 

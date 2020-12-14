@@ -1,3 +1,4 @@
+import Application.InputStringParser
 import Domain.InputElement
 import org.junit.Test
 import kotlin.test.assertEquals

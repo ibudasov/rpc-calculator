@@ -1,3 +1,4 @@
+import Application.Application
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -21,5 +22,10 @@ internal class ApplicationTest {
     @Test
     fun `minus can be calculated`() {
         assertEquals("4.0 ", Application().run("15 11 -"))
+    }
+
+    @Test
+    fun `div can be calculated`() {
+        assertEquals("5.0 ", Application().run("10 2 /"))
     }
 }

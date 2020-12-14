@@ -1,3 +1,5 @@
+package Application
+
 import Domain.InputElement
 
 class InputStringParser {
