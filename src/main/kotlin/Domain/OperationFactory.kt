@@ -6,6 +6,10 @@ class OperationFactory {
             return OperationSqrt()
         }
 
+        if (literal == (OperationPlus()).operationLiteral()) {
+            return OperationPlus()
+        }
+
         throw SorryCouldNotCreateOperatorByLiteral()
     }
 }

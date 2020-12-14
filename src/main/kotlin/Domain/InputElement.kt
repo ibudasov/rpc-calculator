@@ -19,9 +19,17 @@ class InputElement(val elementLiteral: String) {
     }
 
     fun isOperator(): Boolean {
+
+        // todo: logic duplication with OperationFactory
+
         if (elementLiteral == (OperationSqrt()).operationLiteral()) {
             return true
         }
+
+        if (elementLiteral == (OperationPlus()).operationLiteral()) {
+            return true
+        }
+
         return false
     }
 

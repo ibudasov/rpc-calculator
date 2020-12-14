@@ -7,4 +7,9 @@ internal class ApplicationTest {
     fun `sqrt can be calculated`() {
         assertEquals("3.0 ", Application().run("9 sqrt"))
     }
+
+    @Test
+    fun `sum can be calculated`() {
+        assertEquals("10.0 ", Application().run("9 1 +"))
+    }
 }
