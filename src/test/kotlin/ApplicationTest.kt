@@ -17,4 +17,9 @@ internal class ApplicationTest {
     fun `mul can be calculated`() {
         assertEquals("90.0 ", Application().run("9 10 *"))
     }
+
+    @Test
+    fun `minus can be calculated`() {
+        assertEquals("4.0 ", Application().run("15 11 -"))
+    }
 }

@@ -34,6 +34,10 @@ class InputElement(val elementLiteral: String) {
             return true
         }
 
+        if (elementLiteral == (OperationMinus()).operationLiteral()) {
+            return true
+        }
+
         return false
     }
 
