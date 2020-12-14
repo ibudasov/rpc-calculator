@@ -1,7 +1,11 @@
 fun main(args: Array<String>) {
-    println("What's your name?")
-//    println("Hello World!")
-    val name= readLine()
+    println("What would be your input?")
 
-    println("Hello $name!")
+    var inputString = ""
+
+    inputString += readLine()
+
+    println(
+        Application().run(inputString)
+    )
 }

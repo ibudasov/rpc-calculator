@@ -15,13 +15,11 @@ class OperationSqrt : Operation {
     }
 
     override fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean {
-        if (_operands.count() == 1) {
-            return false
+        if (_operands.count() == 0) {
+            _operands = listOf(operand)
         }
 
-        _operands = listOf(operand)
-
-        return true
+        return false
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {

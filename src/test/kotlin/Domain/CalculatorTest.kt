@@ -12,7 +12,7 @@ internal class CalculatorTest {
 
         val result = Calculator().calculateThings(input)
 
-        assertEquals(3.0, result.getTheElementFromTheTopOfIt())
+        assertEquals("3.0 ", result.toString())
     }
 
     @Test
@@ -25,7 +25,7 @@ internal class CalculatorTest {
 
         val result = Calculator().calculateThings(input)
 
-        assertEquals(3.0, result.getTheElementFromTheTopOfIt())
+        assertEquals("3.0 2.0 1.0 ", result.toString())
     }
 
 }

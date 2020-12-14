@@ -16,6 +16,6 @@ internal class OperationSqrtTest {
 
         val updatedStack = operationUnderTheTest.performOperationAndAddResultToStack(stack)
 
-        assertEquals(3.0, updatedStack.getTheElementFromTheTopOfIt())
+        assertEquals(3.0, updatedStack.getTheElementFromTheTopOfItAndRemoveItFromStack())
     }
 }

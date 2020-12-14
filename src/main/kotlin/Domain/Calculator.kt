@@ -15,7 +15,7 @@ class Calculator {
                 val operation = OperationFactory().createByLiteral(it.elementLiteral)
 
                 while (operation.addOperandAndKeepAddingUntilItFitsTheOperation(
-                        stack.getTheElementFromTheTopOfIt()
+                        stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
                     )
                 ) {
                     // doing nothing here, what's needed happened in the condition
