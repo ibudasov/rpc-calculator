@@ -1,4 +1,6 @@
 import Application.Application
+import Infrastructure.CliInput
+import Infrastructure.CliOutput
 
 fun main(args: Array<String>) {
     println("What would be your input?")
@@ -7,7 +9,11 @@ fun main(args: Array<String>) {
 
     inputString += readLine()
 
-    println(
-        Application().run(inputString)
-    )
+    val input = CliInput()
+    input.setRawInput(inputString)
+
+    // TODO: The application currently runs only once and then halts.
+    //       It should receive input, show output and request the input again.
+
+    Application().run(input, CliOutput())
 }

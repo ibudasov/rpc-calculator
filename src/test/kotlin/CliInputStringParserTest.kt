@@ -1,9 +1,9 @@
-import Application.InputStringParser
 import Domain.InputElement
+import Infrastructure.CliInputStringParser
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class InputStringParserTest {
+internal class CliInputStringParserTest {
 
     @Test
     fun `string can be parsed to InputElements`() {
@@ -14,7 +14,7 @@ internal class InputStringParserTest {
         expected.add(InputElement("2"))
         expected.add(InputElement("sqrt"))
 
-        val parser = InputStringParser()
+        val parser = CliInputStringParser()
 
         assertEquals(
             expected.first().isNumber(),
