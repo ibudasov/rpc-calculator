@@ -30,6 +30,10 @@ class InputElement(val elementLiteral: String) {
             return true
         }
 
+        if (elementLiteral == (OperationTimes()).operationLiteral()) {
+            return true
+        }
+
         return false
     }
 

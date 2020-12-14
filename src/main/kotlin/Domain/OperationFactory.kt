@@ -10,6 +10,10 @@ class OperationFactory {
             return OperationPlus()
         }
 
+        if (literal == (OperationTimes()).operationLiteral()) {
+            return OperationTimes()
+        }
+
         throw SorryCouldNotCreateOperatorByLiteral()
     }
 }

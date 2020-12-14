@@ -12,4 +12,9 @@ internal class ApplicationTest {
     fun `sum can be calculated`() {
         assertEquals("10.0 ", Application().run("9 1 +"))
     }
+
+    @Test
+    fun `mul can be calculated`() {
+        assertEquals("90.0 ", Application().run("9 10 *"))
+    }
 }
