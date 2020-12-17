@@ -9,6 +9,8 @@ class OperationFactory {
             OperationTimes().operationLiteral() -> OperationTimes()
             OperationMinus().operationLiteral() -> OperationMinus()
             OperationDiv().operationLiteral() -> OperationDiv()
+            // todo: undo operator
+            // todo: clear operator
 
             else -> throw SorryCouldNotCreateOperatorByLiteral()
         }
