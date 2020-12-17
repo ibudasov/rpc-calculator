@@ -21,14 +21,9 @@ class OperationPlus : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-
-        var resultOfTheOperation = 0.0
-
-        _operands.forEach {
-            resultOfTheOperation += it
-        }
-
-        stack.addNumberOnTopOfIt(resultOfTheOperation)
+        stack.addNumberOnTopOfIt(
+            _operands.first() + _operands.last()
+        )
 
         return stack
     }

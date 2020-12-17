@@ -22,14 +22,9 @@ class OperationSqrt : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-
-        var resultOfTheOperation = 0.0
-
-        _operands.forEach {
-            resultOfTheOperation = sqrt(it)
-        }
-
-        stack.addNumberOnTopOfIt(resultOfTheOperation)
+        stack.addNumberOnTopOfIt(
+            sqrt(_operands.first())
+        )
 
         return stack
     }
