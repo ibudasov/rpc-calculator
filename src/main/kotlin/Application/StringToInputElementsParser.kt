@@ -1,8 +1,8 @@
-package Infrastructure
+package Application
 
 import Domain.InputElement
 
-class CliInputStringParser {
+class StringToInputElementsParser {
 
     fun parseIt(string: String): List<InputElement> {
         val listOfLiterals = string.split(' ')

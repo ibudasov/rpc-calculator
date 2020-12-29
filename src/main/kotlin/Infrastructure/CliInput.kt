@@ -1,5 +1,6 @@
 package Infrastructure
 
+import Application.StringToInputElementsParser
 import Application.Input
 import Domain.InputElement
 
@@ -12,6 +13,6 @@ class CliInput : Input {
     }
 
     override fun getParsedInput(): List<InputElement> {
-        return CliInputStringParser().parseIt(_rawInput)
+        return StringToInputElementsParser().parseIt(_rawInput)
     }
 }
