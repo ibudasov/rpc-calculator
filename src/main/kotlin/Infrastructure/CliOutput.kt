@@ -10,4 +10,8 @@ class CliOutput : Output {
 
         println("stack: " + stack.toString())
     }
+
+    override fun printLine(line: String) {
+        println(line)
+    }
 }

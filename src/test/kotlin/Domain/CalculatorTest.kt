@@ -1,7 +1,9 @@
 package Domain
 
 import org.junit.Test
+import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
+import kotlin.test.expect
 
 internal class CalculatorTest {
     @Test
@@ -90,5 +92,15 @@ internal class CalculatorTest {
         val result = Calculator().calculateThings(input)
 
         assertEquals("21.0 ", result.toString())
+    }
+
+    @Test
+    fun `If an operator cannot find a sufficient number of parameters on the stack, a warning is displayed`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("-"))
+
+        assertThrows<SorryCannotFindSufficientNumberOfParametersInTheStack> {
+            Calculator().calculateThings(input)
+        }
     }
 }

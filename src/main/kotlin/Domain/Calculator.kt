@@ -16,8 +16,6 @@ class Calculator {
             if (it.isOperator()) {
                 val operation = OperationFactory().createByLiteral(it.elementLiteral)
 
-                // todo: process the lack of operands in the stack here
-
                 while (operation.addOperandAndKeepAddingUntilItFitsTheOperation(
                         stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
                     )

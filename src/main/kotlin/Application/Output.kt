@@ -9,4 +9,6 @@ interface Output {
      * string and output in in CLI, or encode to JSON and output in web
      */
     fun outputStack(stack: Stack)
+
+    fun printLine(line: String)
 }

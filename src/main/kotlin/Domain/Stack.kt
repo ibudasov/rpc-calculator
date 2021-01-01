@@ -14,7 +14,19 @@ class Stack {
     }
 
     fun getTheElementFromTheTopOfItAndRemoveItFromStack(): Double {
+
+        val lastValueInTheStack = 1
+
+        if(theseNumbers.size < lastValueInTheStack) {
+            throw SorryCannotFindSufficientNumberOfParametersInTheStack()
+        }
+
         return theseNumbers.removeFirst()
+    }
+
+    fun howManyOperandsAreThere(): Int
+    {
+        return theseNumbers.size
     }
 
     override fun toString(): String {
