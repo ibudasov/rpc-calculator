@@ -21,7 +21,7 @@ class Stack {
         var accunulator = ""
 
         theseNumbers.forEach {
-            accunulator += it.toString() + " "
+            accunulator += "$it " // 👈 this is an element converted to string plus a space
         }
 
         return accunulator

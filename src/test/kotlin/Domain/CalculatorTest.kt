@@ -75,4 +75,20 @@ internal class CalculatorTest {
 
         assertEquals("27.0 ", result.toString())
     }
+
+    @Test
+    fun `few operations can be performed in one go`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("9.0"))
+        input.add(InputElement("3.0"))
+        input.add(InputElement("*"))
+        input.add(InputElement("5"))
+        input.add(InputElement("+"))
+        input.add(InputElement("11"))
+        input.add(InputElement("-"))
+
+        val result = Calculator().calculateThings(input)
+
+        assertEquals("21.0 ", result.toString())
+    }
 }
