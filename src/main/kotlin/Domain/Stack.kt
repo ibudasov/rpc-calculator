@@ -2,15 +2,14 @@ package Domain
 
 class Stack {
 
-    // todo: having this thing Mutable will cause problems when there are multithreads. Make it just a list
-    private var theseNumbers: MutableList<Double>
+    private var theseNumbers: List<Double>
 
     init {
-        theseNumbers = mutableListOf()
+        theseNumbers = listOf()
     }
 
     fun addNumberOnTopOfIt(resultOfOperation: Double) {
-        theseNumbers = listOf(resultOfOperation).plus(theseNumbers.toList()).toMutableList()
+        theseNumbers = listOf(resultOfOperation).plus(theseNumbers)
     }
 
     fun getTheElementFromTheTopOfItAndRemoveItFromStack(): Double {
@@ -21,12 +20,11 @@ class Stack {
             throw SorryCannotFindSufficientNumberOfParametersInTheStack()
         }
 
-        return theseNumbers.removeFirst()
-    }
+        val first = theseNumbers.first()
 
-    fun howManyOperandsAreThere(): Int
-    {
-        return theseNumbers.size
+        theseNumbers = theseNumbers.drop(1)
+
+        return first
     }
 
     override fun toString(): String {
