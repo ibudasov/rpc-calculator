@@ -6,11 +6,16 @@ class Calculator {
 
     fun calculateThings(input: List<InputElement>): Stack {
         var stack = Stack()
+        val stackHistory = StackStateHistory()
 
         input.forEach {
 
+            if (it.isUndo()) {
+                return stackHistory.getLastSavedStackStateAndRemoveItFromHistory()
+            }
+
             if (it.isNumber()) {
-                stack.addNumberOnTopOfIt(it.asNumber())
+                stack = stack.addNumberOnTopOfIt(it.asNumber())
             }
 
             if (it.isOperator()) {
@@ -26,6 +31,7 @@ class Calculator {
                 stack = operation.performOperationAndAddResultToStack(stack)
             }
 
+            stackHistory.saveStackState(stack)
         }
 
         return stack

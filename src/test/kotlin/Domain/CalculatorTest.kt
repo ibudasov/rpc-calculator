@@ -120,6 +120,7 @@ internal class CalculatorTest {
         }
     }
 
+    @Test
     fun `undo operator removes an operand from the stack`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9.0"))

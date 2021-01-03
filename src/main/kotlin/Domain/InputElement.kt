@@ -29,6 +29,10 @@ class InputElement(val elementLiteral: String) {
         }
     }
 
+    fun isUndo(): Boolean {
+        return elementLiteral == "undo"
+    }
+
     override fun toString(): String {
         return elementLiteral
     }

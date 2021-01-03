@@ -2,39 +2,51 @@ package Domain
 
 class Stack {
 
-    private var theseNumbers: List<Double>
+    private var operands: List<Double>
 
     init {
-        theseNumbers = listOf()
+        operands = listOf()
     }
 
-    fun addNumberOnTopOfIt(resultOfOperation: Double) {
-        theseNumbers = listOf(resultOfOperation).plus(theseNumbers)
+    fun addNumberOnTopOfIt(resultOfOperation: Double): Stack {
+        operands = listOf(resultOfOperation).plus(operands)
+
+        return this
     }
 
     fun getTheElementFromTheTopOfItAndRemoveItFromStack(): Double {
 
         val lastValueInTheStack = 1
 
-        if (theseNumbers.size < lastValueInTheStack) {
+        if (operands.size < lastValueInTheStack) {
             throw SorryCannotFindSufficientNumberOfParametersInTheStack()
         }
 
-        val first = theseNumbers.first()
+        val first = operands.first()
 
-        theseNumbers = theseNumbers.drop(1)
+        operands = operands.drop(1)
 
         return first
     }
 
     fun countElements(): Int {
-        return theseNumbers.size
+        return operands.size
+    }
+
+    fun clone(): Stack
+    {
+        val newStack = Stack()
+        operands.forEach {
+            newStack.addNumberOnTopOfIt(it)
+        }
+
+        return newStack
     }
 
     override fun toString(): String {
         var accunulator = ""
 
-        theseNumbers.forEach {
+        operands.forEach {
             accunulator += "$it " // 👈 this is an element converted to string plus a space
         }
 
