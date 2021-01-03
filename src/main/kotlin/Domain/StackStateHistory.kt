@@ -16,10 +16,8 @@ class StackStateHistory {
     }
 
     fun getLastSavedStackStateAndRemoveItFromHistory(): Stack {
-        val last = history.last()
-
         history = history.drop(1)
 
-        return last
+        return history.first()
     }
 }

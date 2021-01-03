@@ -8,14 +8,18 @@ class Calculator {
         var stack = Stack()
         val stackHistory = StackStateHistory()
 
+        stackHistory.saveStackState(stack)
+
         input.forEach {
 
             if (it.isUndo()) {
-                return stackHistory.getLastSavedStackStateAndRemoveItFromHistory()
+                stack = stackHistory.getLastSavedStackStateAndRemoveItFromHistory()
             }
 
             if (it.isNumber()) {
                 stack = stack.addNumberOnTopOfIt(it.asNumber())
+                stackHistory.saveStackState(stack)
+
             }
 
             if (it.isOperator()) {
@@ -29,9 +33,10 @@ class Calculator {
                 }
 
                 stack = operation.performOperationAndAddResultToStack(stack)
+                stackHistory.saveStackState(stack)
+
             }
 
-            stackHistory.saveStackState(stack)
         }
 
         return stack

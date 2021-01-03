@@ -132,6 +132,7 @@ internal class CalculatorTest {
         assertEquals("9.0 ", result.toString())
     }
 
+    @Test
     fun `double undo operator removes 2 operands from the stack`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9.0"))
