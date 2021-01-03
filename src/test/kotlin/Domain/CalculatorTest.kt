@@ -119,4 +119,47 @@ internal class CalculatorTest {
             Calculator().calculateThings(input)
         }
     }
+
+    @Test
+    fun `undo operator removes an operand from the stack`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("9.0"))
+        input.add(InputElement("3.0"))
+        input.add(InputElement("undo"))
+
+        val result = Calculator().calculateThings(input)
+
+        assertEquals("9.0 ", result.toString())
+    }
+
+    @Test
+    fun `double undo operator removes 2 operands from the stack`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("9.0"))
+        input.add(InputElement("3.0"))
+        input.add(InputElement("undo"))
+        input.add(InputElement("undo"))
+
+        val result = Calculator().calculateThings(input)
+
+        assertEquals("", result.toString())
+    }
+
+    fun `undo operator can undo the operation, result of which is in the stack`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("5.0"))
+        input.add(InputElement("4.0"))
+        input.add(InputElement("3.0"))
+        input.add(InputElement("2.0"))
+        input.add(InputElement("undo"))
+        input.add(InputElement("undo"))
+        input.add(InputElement("*"))
+        input.add(InputElement("5"))
+        input.add(InputElement("*"))
+        input.add(InputElement("undo"))
+
+        val result = Calculator().calculateThings(input)
+
+        assertEquals("20.0 5.0 ", result.toString())
+    }
 }
