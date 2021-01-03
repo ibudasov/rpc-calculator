@@ -1,6 +1,6 @@
-package Application
+package application
 
-import Domain.InputElement
+import domain.InputElement
 
 interface Input {
 

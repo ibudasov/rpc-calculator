@@ -1,6 +1,6 @@
-import Application.Application
-import Infrastructure.CliInput
-import Infrastructure.CliOutput
+import application.Application
+import infrastructure.CliInput
+import infrastructure.CliOutput
 
 fun main(args: Array<String>) {
     println("What would be your input?")

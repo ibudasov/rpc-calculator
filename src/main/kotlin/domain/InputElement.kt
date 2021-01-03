@@ -1,7 +1,7 @@
-package Domain
+package domain
 
-import Domain.Operation.OperationFactory
-import Domain.Operation.SorryCouldNotCreateOperatorByLiteral
+import domain.operation.OperationFactory
+import domain.operation.SorryCouldNotCreateOperatorByLiteral
 import java.lang.Double.parseDouble
 
 class InputElement(val elementLiteral: String) {

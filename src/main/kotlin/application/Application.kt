@@ -1,7 +1,7 @@
-package Application
+package application
 
-import Domain.Calculator
-import Domain.SorryCannotFindSufficientNumberOfParametersInTheStack
+import domain.Calculator
+import domain.SorryCannotFindSufficientNumberOfParametersInTheStack
 
 class Application {
     fun run(input: Input, output: Output) {

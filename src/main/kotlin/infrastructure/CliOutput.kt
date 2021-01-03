@@ -1,7 +1,7 @@
-package Infrastructure
+package infrastructure
 
-import Application.Output
-import Domain.Stack
+import application.Output
+import domain.Stack
 
 class CliOutput : Output {
     override fun outputStack(stack: Stack) {

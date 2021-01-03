@@ -1,3 +1,3 @@
-package Domain.Operation
+package domain.operation
 
 class SorryCouldNotCreateOperatorByLiteral : Exception()

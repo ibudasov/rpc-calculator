@@ -1,8 +1,8 @@
-package Domain.Operation
+package domain.operation
 
-import Domain.Stack
+import domain.Stack
 
-class OperationDiv : Operation {
+class OperationPlus : Operation {
 
     private var _operands: List<Double>
 
@@ -11,7 +11,7 @@ class OperationDiv : Operation {
     }
 
     override fun operationLiteral(): String {
-        return "/"
+        return "+"
     }
 
     override fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean {
@@ -22,7 +22,7 @@ class OperationDiv : Operation {
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
         stack.addNumberOnTopOfIt(
-            _operands.first() / _operands.last()
+            _operands.first() + _operands.last()
         )
 
         return stack

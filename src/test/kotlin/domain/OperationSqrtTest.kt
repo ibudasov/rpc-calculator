@@ -1,6 +1,6 @@
-package Domain
+package domain
 
-import Domain.Operation.OperationSqrt
+import domain.operation.OperationSqrt
 import org.junit.Test
 import kotlin.test.assertEquals
 

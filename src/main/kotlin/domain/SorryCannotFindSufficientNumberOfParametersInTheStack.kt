@@ -1,3 +1,3 @@
-package Domain
+package domain
 
 class SorryCannotFindSufficientNumberOfParametersInTheStack : Exception()

@@ -1,6 +1,6 @@
-package Domain
+package domain
 
-import Domain.Operation.OperationFactory
+import domain.operation.OperationFactory
 
 class Calculator {
 

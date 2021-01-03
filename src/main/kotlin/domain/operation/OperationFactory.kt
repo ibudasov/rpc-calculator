@@ -1,4 +1,4 @@
-package Domain.Operation
+package domain.operation
 
 class OperationFactory {
     fun createByLiteral(literal: String): Operation {

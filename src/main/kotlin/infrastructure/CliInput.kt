@@ -1,8 +1,8 @@
-package Infrastructure
+package infrastructure
 
-import Application.StringToInputElementsParser
-import Application.Input
-import Domain.InputElement
+import application.StringToInputElementsParser
+import application.Input
+import domain.InputElement
 
 class CliInput : Input {
 

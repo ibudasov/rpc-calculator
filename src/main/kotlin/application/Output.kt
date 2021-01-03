@@ -1,6 +1,6 @@
-package Application
+package application
 
-import Domain.Stack
+import domain.Stack
 
 interface Output {
 

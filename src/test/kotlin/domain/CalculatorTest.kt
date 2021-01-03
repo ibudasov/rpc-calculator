@@ -1,9 +1,8 @@
-package Domain
+package domain
 
 import org.junit.Test
 import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
-import kotlin.test.expect
 
 internal class CalculatorTest {
     @Test

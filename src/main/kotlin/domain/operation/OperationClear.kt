@@ -1,8 +1,8 @@
-package Domain.Operation
+package domain.operation
 
-import Domain.Stack
+import domain.Stack
 
-class OperationMinus : Operation {
+class OperationClear : Operation {
 
     private var _operands: List<Double>
 
@@ -11,19 +11,18 @@ class OperationMinus : Operation {
     }
 
     override fun operationLiteral(): String {
-        return "-"
+        return "clear"
     }
 
     override fun addOperandAndKeepAddingUntilItFitsTheOperation(operand: Double): Boolean {
-        _operands = listOf(operand).plus(_operands)
-
-        return (_operands.count() < 2)
+       // no operands are being added for this operation, all we need we have in the stack already
+       return false
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-        stack.addNumberOnTopOfIt(
-            _operands.first() - _operands.last()
-        )
+        for (i in 1..stack.countElements()) {
+            stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
+        }
 
         return stack
     }

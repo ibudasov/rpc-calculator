@@ -1,5 +1,5 @@
-import Domain.InputElement
-import Application.StringToInputElementsParser
+import domain.InputElement
+import application.StringToInputElementsParser
 import org.junit.Test
 import kotlin.test.assertEquals
 

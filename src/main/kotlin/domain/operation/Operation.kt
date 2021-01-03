@@ -1,6 +1,6 @@
-package Domain.Operation
+package domain.operation
 
-import Domain.Stack
+import domain.Stack
 
 interface Operation {
 
