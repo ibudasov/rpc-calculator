@@ -120,7 +120,6 @@ internal class CalculatorTest {
         }
     }
 
-    @Test
     fun `undo operator removes an operand from the stack`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9.0"))
@@ -132,7 +131,6 @@ internal class CalculatorTest {
         assertEquals("9.0 ", result.toString())
     }
 
-    @Test
     fun `double undo operator removes 2 operands from the stack`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9.0"))

@@ -10,7 +10,6 @@ class OperationFactory {
             OperationMinus().operationLiteral() -> OperationMinus()
             OperationDiv().operationLiteral() -> OperationDiv()
             OperationClear().operationLiteral() -> OperationClear()
-            OperationUndo().operationLiteral() -> OperationUndo()
 
             else -> throw SorryCouldNotCreateOperatorByLiteral()
         }
