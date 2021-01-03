@@ -145,6 +145,7 @@ internal class CalculatorTest {
         assertEquals("", result.toString())
     }
 
+    @Test
     fun `undo operator can undo the operation, result of which is in the stack`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("5.0"))
