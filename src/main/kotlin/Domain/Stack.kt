@@ -16,7 +16,7 @@ class Stack {
 
         val lastValueInTheStack = 1
 
-        if(theseNumbers.size < lastValueInTheStack) {
+        if (theseNumbers.size < lastValueInTheStack) {
             throw SorryCannotFindSufficientNumberOfParametersInTheStack()
         }
 
@@ -25,6 +25,10 @@ class Stack {
         theseNumbers = theseNumbers.drop(1)
 
         return first
+    }
+
+    fun countElements(): Int {
+        return theseNumbers.size
     }
 
     override fun toString(): String {

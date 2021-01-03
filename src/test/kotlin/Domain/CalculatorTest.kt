@@ -95,6 +95,22 @@ internal class CalculatorTest {
     }
 
     @Test
+    fun `clear operator clears all the stack`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("9.0"))
+        input.add(InputElement("3.0"))
+        input.add(InputElement("*"))
+        input.add(InputElement("5"))
+        input.add(InputElement("+"))
+        input.add(InputElement("11"))
+        input.add(InputElement("clear"))
+
+        val result = Calculator().calculateThings(input)
+
+        assertEquals("", result.toString())
+    }
+
+    @Test
     fun `If an operator cannot find a sufficient number of parameters on the stack, a warning is displayed`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("-"))
