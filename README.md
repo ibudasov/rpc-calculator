@@ -1,4 +1,4 @@
-# Reverse Polish Calculator
+# Reverse Polish Notation (RPN) Calculator
 
 The calculator has a stack that can contain real numbers.
 
