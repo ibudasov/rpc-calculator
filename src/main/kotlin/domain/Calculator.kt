@@ -1,6 +1,7 @@
 package domain
 
 import domain.operation.OperationFactory
+import java.lang.IllegalStateException
 
 class Calculator {
 
@@ -35,12 +36,8 @@ class Calculator {
                     ) {
                         // doing nothing here, what's needed to happen -- happened in the condition
                     }
-                } catch (e: SorryCannotFindSufficientNumberOfParametersInTheStack) {
-                    throw SorryCannotFindSufficientNumberOfParametersInTheStack(
-                        "operator " + operation.operationLiteral()
-                                + " (position: " + positionOfTheCurrentElement.toString()
-                                + "): insucient parameters"
-                    )
+                } catch (e: IllegalStateException) {
+                    throw SorryCannotFindSufficientNumberOfParametersInTheStack(operation, positionOfTheCurrentElement)
                 }
 
                 stack = operation.performOperationAndAddResultToStack(stack)
