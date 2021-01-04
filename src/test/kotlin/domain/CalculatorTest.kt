@@ -3,6 +3,7 @@ package domain
 import org.junit.Test
 import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 internal class CalculatorTest {
     @Test
@@ -114,9 +115,10 @@ internal class CalculatorTest {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("-"))
 
-        assertThrows<SorryCannotFindSufficientNumberOfParametersInTheStack> {
+        val exception = assertFailsWith<SorryCannotFindSufficientNumberOfParametersInTheStack> {
             Calculator().calculateThings(input)
         }
+        assertEquals("operator - (position: 1): insucient parameters", exception.message)
     }
 
     @Test

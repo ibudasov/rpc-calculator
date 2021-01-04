@@ -19,7 +19,7 @@ class Stack {
         val lastValueInTheStack = 1
 
         if (operands.size < lastValueInTheStack) {
-            throw SorryCannotFindSufficientNumberOfParametersInTheStack()
+            throw SorryCannotFindSufficientNumberOfParametersInTheStack("")
         }
 
         val first = operands.first()

@@ -7,10 +7,13 @@ class Calculator {
     fun calculateThings(input: List<InputElement>): Stack {
         var stack = Stack()
         val stackHistory = StackStateHistory()
+        var positionOfTheCurrentElement = 0
 
         stackHistory.saveStackState(stack)
 
         input.forEach {
+
+            positionOfTheCurrentElement++
 
             if (it.isUndo()) {
                 stack = stackHistory.getLastSavedStackStateAndRemoveItFromHistory()
@@ -25,11 +28,19 @@ class Calculator {
             if (it.isOperator()) {
                 val operation = OperationFactory().createByLiteral(it.elementLiteral)
 
-                while (operation.addOperandAndKeepAddingUntilItFitsTheOperation(
-                        stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
+                try {
+                    while (operation.addOperandAndKeepAddingUntilItFitsTheOperation(
+                            stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
+                        )
+                    ) {
+                        // doing nothing here, what's needed to happen -- happened in the condition
+                    }
+                } catch (e: SorryCannotFindSufficientNumberOfParametersInTheStack) {
+                    throw SorryCannotFindSufficientNumberOfParametersInTheStack(
+                        "operator " + operation.operationLiteral()
+                                + " (position: " + positionOfTheCurrentElement.toString()
+                                + "): insucient parameters"
                     )
-                ) {
-                    // doing nothing here, what's needed to happen -- happened in the condition
                 }
 
                 stack = operation.performOperationAndAddResultToStack(stack)

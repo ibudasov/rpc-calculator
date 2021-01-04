@@ -1,3 +1,3 @@
 package domain
 
-class SorryCannotFindSufficientNumberOfParametersInTheStack : Exception()
+class SorryCannotFindSufficientNumberOfParametersInTheStack(message: String) : Exception(message) {}
