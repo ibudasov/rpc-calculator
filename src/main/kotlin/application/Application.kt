@@ -11,9 +11,7 @@ class Application {
                 Calculator().calculateThings(input.getParsedInput())
             )
         } catch (e: SorryCannotFindSufficientNumberOfParametersInTheStack) {
-
-            // todo: make the message specific here
-            output.printLine("operator <operator> (position: <pos>): insufficient parameters")
+            e.message?.let { output.printLine(it) }
         }
     }
 }
