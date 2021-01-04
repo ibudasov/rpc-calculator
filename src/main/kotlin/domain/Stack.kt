@@ -1,5 +1,8 @@
 package domain
 
+import java.math.RoundingMode
+import java.text.DecimalFormat
+
 class Stack {
 
     private var operands: List<Double>
@@ -46,8 +49,11 @@ class Stack {
     override fun toString(): String {
         var accunulator = ""
 
+        val df = DecimalFormat("#.##########")
+        df.roundingMode = RoundingMode.CEILING
+
         operands.forEach {
-            accunulator += "$it " // 👈 this is an element converted to string plus a space
+            accunulator += df.format(it) + " "
         }
 
         return accunulator
