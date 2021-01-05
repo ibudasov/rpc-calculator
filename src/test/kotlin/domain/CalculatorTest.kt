@@ -17,7 +17,7 @@ internal class CalculatorTest {
         input.add(InputElement("11"))
         input.add(InputElement("-"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         assertEquals("21 ", result.toString())
     }
@@ -28,7 +28,7 @@ internal class CalculatorTest {
         input.add(InputElement("-"))
 
         val exception = assertFailsWith<SorryCannotFindSufficientNumberOfParametersInTheStack> {
-            Calculator().calculateThings(input)
+            Calculator().calculate(input)
         }
         assertEquals("operator - (position: 1): insucient parameters", exception.message)
     }
@@ -40,7 +40,7 @@ internal class CalculatorTest {
         input.add(InputElement("3"))
         input.add(InputElement("undo"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         assertEquals("9 ", result.toString())
     }
@@ -53,7 +53,7 @@ internal class CalculatorTest {
         input.add(InputElement("undo"))
         input.add(InputElement("undo"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         assertEquals("", result.toString())
     }
@@ -72,7 +72,7 @@ internal class CalculatorTest {
         input.add(InputElement("*"))
         input.add(InputElement("undo"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         assertEquals("20 5 ", result.toString())
     }

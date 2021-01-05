@@ -15,7 +15,7 @@ internal class OperationClearTest {
         input.add(InputElement("+"))
         input.add(InputElement("clear"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         assertEquals("", result.toString())
         assertEquals(0, result.size())

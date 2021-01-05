@@ -13,7 +13,7 @@ class OperationDivTest {
         input.add(InputElement("3"))
         input.add(InputElement("/"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         kotlin.test.assertEquals("3 ", result.toString())
     }
@@ -26,7 +26,7 @@ class OperationDivTest {
         input.add(InputElement("/"))
 
         assertFailsWith<SorryDivisionByZeroIsNoGood> {
-            Calculator().calculateThings(input)
+            Calculator().calculate(input)
         }
     }
 }

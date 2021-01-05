@@ -12,7 +12,7 @@ class OperationMinusTest {
         input.add(InputElement("3"))
         input.add(InputElement("-"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         kotlin.test.assertEquals("6 ", result.toString())
     }

@@ -13,7 +13,7 @@ class OperationPlusTest {
         input.add(InputElement("3"))
         input.add(InputElement("+"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         kotlin.test.assertEquals("12 ", result.toString())
     }

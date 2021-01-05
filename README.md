@@ -29,6 +29,10 @@ operator <operator> (position: <pos>): insufficient parameters
 
 ## Ideas behind the design
 
+- I was trying to be as expressive in code as possible, by naming things according to domain terms and project
+  requirements like: `SorryCannotFindSufficientNumberOfParametersInTheStack`
+  , `Operation.performOperationAndAddResultToStack()`, etc., to make the code as clear as possible for those who
+  understand the domain
 - I was trying to follow Hexagonal/DDD approach, by splitting the whole project to `domain`, `application`
   and `infrastructure` layers
 - `infrastructure` layer contains only CLI interface, but later on — will be able to support also web interface
@@ -45,8 +49,5 @@ operator <operator> (position: <pos>): insufficient parameters
 
 ## Todo
 
-- not all the operations are supported: clear and undo are missing, but the foundation for them is there
-- code coverage can be improved, but I believe, the main things are covered
-- `Stack` is implemented on top of mutable `List`, which will cause troubles with multithreading
-- formatting of the numbers is just not happening
-- processing edge cases like not enough operands in the stack, division by `0`, etc
+- custom `Stack` implementation can go in favour of the one from SDK
+- preserve stack between inputs, so the operations can be chained

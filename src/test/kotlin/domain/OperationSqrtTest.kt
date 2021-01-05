@@ -10,7 +10,7 @@ internal class OperationSqrtTest {
         input.add(InputElement("9"))
         input.add(InputElement("sqrt"))
 
-        val result = Calculator().calculateThings(input)
+        val result = Calculator().calculate(input)
 
         assertEquals("3 ", result.toString())
     }

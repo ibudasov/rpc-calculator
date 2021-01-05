@@ -8,7 +8,7 @@ class Application {
 
         try {
             output.outputStack(
-                Calculator().calculateThings(input.getParsedInput())
+                Calculator().calculate(input.getParsedInput())
             )
         } catch (e: SorryCannotFindSufficientNumberOfParametersInTheStack) {
             e.message?.let { output.printLine(it) }
