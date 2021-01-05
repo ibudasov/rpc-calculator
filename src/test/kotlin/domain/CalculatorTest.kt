@@ -5,57 +5,9 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 internal class CalculatorTest {
-    @Test
-    fun `sqrt operation can be performed on a number`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("9"))
-        input.add(InputElement("sqrt"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("3 ", result.toString())
-    }
 
     @Test
-    fun `sqrt operation can be performed on a stack with many numbers`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("1"))
-        input.add(InputElement("2"))
-        input.add(InputElement("9"))
-        input.add(InputElement("sqrt"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("3 2 1 ", result.toString())
-    }
-
-
-    @Test
-    fun `minus operation can be performed on a number`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("9"))
-        input.add(InputElement("3"))
-        input.add(InputElement("-"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("6 ", result.toString())
-    }
-
-    @Test
-    fun `plus operation can be performed on a number`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("9"))
-        input.add(InputElement("3"))
-        input.add(InputElement("+"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("12 ", result.toString())
-    }
-
-    @Test
-    fun `times operation can be performed on a number`() {
+    fun `times operation happy flow`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9"))
         input.add(InputElement("3"))

@@ -1,22 +1,17 @@
 package domain
 
-import domain.operation.OperationSqrt
 import org.junit.Test
 import kotlin.test.assertEquals
 
 internal class OperationSqrtTest {
     @Test
-    fun `sqrt operation can be performed on a number`() {
-        val operationUnderTheTest = OperationSqrt()
+    fun `sqrt operation happy flow`() {
+        val input = mutableListOf<InputElement>()
+        input.add(InputElement("9"))
+        input.add(InputElement("sqrt"))
 
-        assertEquals("sqrt", operationUnderTheTest.operationLiteral())
+        val result = Calculator().calculateThings(input)
 
-        operationUnderTheTest.addOperandAndKeepAddingUntilItFitsTheOperation(9.0)
-
-        val stack = Stack()
-
-        val updatedStack = operationUnderTheTest.performOperationAndAddResultToStack(stack)
-
-        assertEquals(3.0, updatedStack.getTheElementFromTheTopOfItAndRemoveItFromStack())
+        assertEquals("3 ", result.toString())
     }
 }

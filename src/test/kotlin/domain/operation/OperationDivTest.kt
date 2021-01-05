@@ -7,7 +7,7 @@ import kotlin.test.assertFailsWith
 
 class OperationDivTest {
     @Test
-    fun `div operation can be performed on a number`() {
+    fun `div operation happy flow`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9"))
         input.add(InputElement("3"))
