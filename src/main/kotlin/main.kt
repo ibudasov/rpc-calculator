@@ -3,17 +3,16 @@ import infrastructure.CliInput
 import infrastructure.CliOutput
 
 fun main(args: Array<String>) {
-    println("What would be your input?")
+    println("👇 What would be your input?")
 
-    var inputString = ""
+    var inputString = readLine()
 
-    inputString += readLine()
+    while (inputString != null && inputString.isNotBlank()) {
+        val input = CliInput()
+        input.setRawInput(inputString)
+        Application().run(input, CliOutput())
+        inputString = readLine()
+    }
 
-    val input = CliInput()
-    input.setRawInput(inputString)
-
-    // TODO: The application currently runs only once and then halts.
-    //       It should receive input, show output and request the input again.
-
-    Application().run(input, CliOutput())
+    println("🤌 Ciao!")
 }
