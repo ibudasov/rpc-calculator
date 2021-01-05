@@ -1,7 +1,6 @@
 package domain
 
 import domain.operation.OperationFactory
-import java.lang.IllegalStateException
 
 class Calculator {
 
@@ -20,8 +19,8 @@ class Calculator {
                 stack = stackHistory.getLastSavedStackStateAndRemoveItFromHistory()
             }
 
-            if (it.isNumber()) {
-                stack = stack.addNumberOnTopOfIt(it.asNumber())
+            if (it.isOperand()) {
+                stack = stack.push(it.asOperand())
                 stackHistory.saveStackState(stack)
 
             }
@@ -31,7 +30,7 @@ class Calculator {
 
                 try {
                     while (operation.addOperandAndKeepAddingUntilItFitsTheOperation(
-                            stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
+                            stack.pop()
                         )
                     ) {
                         // doing nothing here, what's needed to happen -- happened in the condition

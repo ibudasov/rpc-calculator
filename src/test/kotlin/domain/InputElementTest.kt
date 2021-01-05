@@ -18,13 +18,13 @@ internal class InputElementTest {
     fun `inputElement can be can be identified as an Int when it's applicable`() {
         val elementUnderTheTest = InputElement("2")
 
-        assertTrue(elementUnderTheTest.isNumber())
+        assertTrue(elementUnderTheTest.isOperand())
     }
 
     @Test
     fun `inputElement can be can be identified as an NON-Int when it's a word`() {
         val elementUnderTheTest = InputElement("banaan")
 
-        assertFalse(elementUnderTheTest.isNumber())
+        assertFalse(elementUnderTheTest.isOperand())
     }
 }

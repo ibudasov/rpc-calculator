@@ -26,7 +26,7 @@ class OperationDiv : Operation {
             throw SorryDivisionByZeroIsNoGood()
         }
 
-        stack.addNumberOnTopOfIt(
+        stack.push(
             _operands.first() / _operands.last()
         )
 

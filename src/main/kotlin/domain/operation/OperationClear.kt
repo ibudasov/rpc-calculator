@@ -14,8 +14,8 @@ class OperationClear : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-        for (i in 1..stack.countElements()) {
-            stack.getTheElementFromTheTopOfItAndRemoveItFromStack()
+        for (i in 1..stack.size()) {
+            stack.pop()
         }
 
         return stack

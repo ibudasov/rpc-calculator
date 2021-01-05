@@ -22,7 +22,7 @@ class OperationSqrt : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-        stack.addNumberOnTopOfIt(
+        stack.push(
             sqrt(_operands.first())
         )
 

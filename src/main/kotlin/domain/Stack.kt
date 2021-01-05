@@ -11,13 +11,13 @@ class Stack {
         operands = listOf()
     }
 
-    fun addNumberOnTopOfIt(resultOfOperation: Double): Stack {
+    fun push(resultOfOperation: Double): Stack {
         operands = listOf(resultOfOperation).plus(operands)
 
         return this
     }
 
-    fun getTheElementFromTheTopOfItAndRemoveItFromStack(): Double {
+    fun pop(): Double {
 
         val lastValueInTheStack = 1
 
@@ -32,7 +32,7 @@ class Stack {
         return first
     }
 
-    fun countElements(): Int {
+    fun size(): Int {
         return operands.size
     }
 
@@ -40,7 +40,7 @@ class Stack {
     {
         val newStack = Stack()
         operands.forEach {
-            newStack.addNumberOnTopOfIt(it)
+            newStack.push(it)
         }
 
         return newStack

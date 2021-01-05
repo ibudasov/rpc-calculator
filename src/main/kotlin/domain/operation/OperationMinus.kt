@@ -21,7 +21,7 @@ class OperationMinus : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-        stack.addNumberOnTopOfIt(
+        stack.push(
             _operands.first() - _operands.last()
         )
 

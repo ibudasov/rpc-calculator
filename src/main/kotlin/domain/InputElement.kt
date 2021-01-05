@@ -5,7 +5,7 @@ import domain.operation.SorryCouldNotCreateOperatorByLiteral
 import java.lang.Double.parseDouble
 
 class InputElement(val elementLiteral: String) {
-    fun isNumber(): Boolean {
+    fun isOperand(): Boolean {
 
         try {
             parseDouble(elementLiteral)
@@ -16,7 +16,7 @@ class InputElement(val elementLiteral: String) {
         return true
     }
 
-    fun asNumber(): Double {
+    fun asOperand(): Double {
         return parseDouble(elementLiteral)
     }
 

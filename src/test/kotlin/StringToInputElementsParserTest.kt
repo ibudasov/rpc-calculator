@@ -1,5 +1,5 @@
-import domain.InputElement
 import application.StringToInputElementsParser
+import domain.InputElement
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -17,17 +17,17 @@ internal class StringToInputElementsParserTest {
         val parser = StringToInputElementsParser()
 
         assertEquals(
-            expected.first().isNumber(),
-            parser.parseIt(toBeParsed).first().isNumber()
+            expected.first().isOperand(),
+            parser.parseIt(toBeParsed).first().isOperand()
         )
         assertEquals(
             1.0,
-            parser.parseIt(toBeParsed).first().asNumber()
+            parser.parseIt(toBeParsed).first().asOperand()
         )
 
         assertEquals(
-            expected.last().isNumber(),
-            parser.parseIt(toBeParsed).last().isNumber()
+            expected.last().isOperand(),
+            parser.parseIt(toBeParsed).last().isOperand()
         )
         assertEquals(
             "sqrt",
