@@ -21,6 +21,11 @@ class OperationDiv : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stack: Stack): Stack {
+
+        if(_operands.last() == 0.0) {
+            throw SorryDivisionByZeroIsNoGood()
+        }
+
         stack.addNumberOnTopOfIt(
             _operands.first() / _operands.last()
         )

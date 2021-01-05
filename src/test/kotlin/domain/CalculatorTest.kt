@@ -1,7 +1,6 @@
 package domain
 
 import org.junit.Test
-import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
@@ -30,17 +29,6 @@ internal class CalculatorTest {
         assertEquals("3 2 1 ", result.toString())
     }
 
-    @Test
-    fun `div operation can be performed on a number`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("9"))
-        input.add(InputElement("3"))
-        input.add(InputElement("/"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("3 ", result.toString())
-    }
 
     @Test
     fun `minus operation can be performed on a number`() {
@@ -92,22 +80,6 @@ internal class CalculatorTest {
         val result = Calculator().calculateThings(input)
 
         assertEquals("21 ", result.toString())
-    }
-
-    @Test
-    fun `clear operator clears all the stack`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("9"))
-        input.add(InputElement("3"))
-        input.add(InputElement("*"))
-        input.add(InputElement("5"))
-        input.add(InputElement("+"))
-        input.add(InputElement("11"))
-        input.add(InputElement("clear"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("", result.toString())
     }
 
     @Test
