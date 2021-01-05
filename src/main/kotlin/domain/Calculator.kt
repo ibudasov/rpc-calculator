@@ -22,7 +22,6 @@ class Calculator {
             if (it.isOperand()) {
                 stack = stack.push(it.asOperand())
                 stackHistory.saveStackState(stack)
-
             }
 
             if (it.isOperator()) {
@@ -41,9 +40,7 @@ class Calculator {
 
                 stack = operation.performOperationAndAddResultToStack(stack)
                 stackHistory.saveStackState(stack)
-
             }
-
         }
 
         return stack

@@ -3,6 +3,7 @@ package domain
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
+// todo: seems like standard Stack can be used here. Too bad I discovered it too late
 class Stack {
 
     private var operands: List<Double>
@@ -36,8 +37,7 @@ class Stack {
         return operands.size
     }
 
-    fun clone(): Stack
-    {
+    fun clone(): Stack {
         val newStack = Stack()
         operands.forEach {
             newStack.push(it)
