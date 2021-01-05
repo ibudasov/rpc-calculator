@@ -7,18 +7,6 @@ import kotlin.test.assertFailsWith
 internal class CalculatorTest {
 
     @Test
-    fun `times operation happy flow`() {
-        val input = mutableListOf<InputElement>()
-        input.add(InputElement("9"))
-        input.add(InputElement("3"))
-        input.add(InputElement("*"))
-
-        val result = Calculator().calculateThings(input)
-
-        assertEquals("27 ", result.toString())
-    }
-
-    @Test
     fun `few operations can be performed in one go`() {
         val input = mutableListOf<InputElement>()
         input.add(InputElement("9"))
