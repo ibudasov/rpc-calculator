@@ -5,10 +5,7 @@ import domain.Stack
 
 class CliOutput : Output {
     override fun outputStack(stack: Stack) {
-
-        // TODO: number formatting might be improved here
-
-        println("stack: " + stack.toString())
+        println("stack: $stack")
     }
 
     override fun printLine(line: String) {

@@ -4,12 +4,6 @@ import domain.Stack
 
 class OperationClear : Operation {
 
-    private var _operands: List<Double>
-
-    init {
-        _operands = listOf()
-    }
-
     override fun operationLiteral(): String {
         return "clear"
     }
