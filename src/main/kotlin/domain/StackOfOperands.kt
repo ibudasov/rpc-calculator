@@ -4,7 +4,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 
 // todo: seems like standard Stack can be used here. Too bad I discovered it too late
-class Stack {
+class StackOfOperands {
 
     private var operands: List<Double>
 
@@ -12,7 +12,7 @@ class Stack {
         operands = listOf()
     }
 
-    fun push(resultOfOperation: Double): Stack {
+    fun push(resultOfOperation: Double): StackOfOperands {
         operands = listOf(resultOfOperation).plus(operands)
 
         return this
@@ -37,8 +37,8 @@ class Stack {
         return operands.size
     }
 
-    fun clone(): Stack {
-        val newStack = Stack()
+    fun clone(): StackOfOperands {
+        val newStack = StackOfOperands()
         operands.forEach {
             newStack.push(it)
         }

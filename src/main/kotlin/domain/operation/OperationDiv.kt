@@ -1,6 +1,6 @@
 package domain.operation
 
-import domain.Stack
+import domain.StackOfOperands
 
 class OperationDiv : Operation {
 
@@ -20,16 +20,16 @@ class OperationDiv : Operation {
         return (_operands.count() < 2)
     }
 
-    override fun performOperationAndAddResultToStack(stack: Stack): Stack {
+    override fun performOperationAndAddResultToStack(stackOfOperands: StackOfOperands): StackOfOperands {
 
-        if(_operands.last() == 0.0) {
+        if (_operands.last() == 0.0) {
             throw SorryDivisionByZeroIsNoGood()
         }
 
-        stack.push(
+        stackOfOperands.push(
             _operands.first() / _operands.last()
         )
 
-        return stack
+        return stackOfOperands
     }
 }

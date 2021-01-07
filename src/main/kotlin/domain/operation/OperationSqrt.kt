@@ -1,6 +1,6 @@
 package domain.operation
 
-import domain.Stack
+import domain.StackOfOperands
 import kotlin.math.sqrt
 
 class OperationSqrt : Operation {
@@ -21,11 +21,11 @@ class OperationSqrt : Operation {
         return (_operands.count() < 1)
     }
 
-    override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-        stack.push(
+    override fun performOperationAndAddResultToStack(stackOfOperands: StackOfOperands): StackOfOperands {
+        stackOfOperands.push(
             sqrt(_operands.first())
         )
 
-        return stack
+        return stackOfOperands
     }
 }

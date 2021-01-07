@@ -2,20 +2,20 @@ package domain
 
 class StackStateHistory {
 
-    private var history: List<Stack>
+    private var history: List<StackOfOperands>
 
     init {
         history = listOf()
     }
 
-    fun saveStackState(stack: Stack) {
+    fun saveStackState(stackOfOperands: StackOfOperands) {
 
-        val recreatedStack = stack.clone()
+        val recreatedStack = stackOfOperands.clone()
 
         history = listOf(recreatedStack).plus(history)
     }
 
-    fun getLastSavedStackStateAndRemoveItFromHistory(): Stack {
+    fun getLastSavedStackStateAndRemoveItFromHistory(): StackOfOperands {
         history = history.drop(1)
 
         return history.first()

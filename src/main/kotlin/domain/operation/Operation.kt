@@ -1,6 +1,6 @@
 package domain.operation
 
-import domain.Stack
+import domain.StackOfOperands
 
 interface Operation {
 
@@ -26,5 +26,5 @@ interface Operation {
      *
      * I encapsulate this behaviour into the operation itself
      */
-    fun performOperationAndAddResultToStack(stack: Stack): Stack
+    fun performOperationAndAddResultToStack(stackOfOperands: StackOfOperands): StackOfOperands
 }

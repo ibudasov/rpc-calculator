@@ -1,6 +1,6 @@
 package domain.operation
 
-import domain.Stack
+import domain.StackOfOperands
 
 class OperationTimes : Operation {
 
@@ -20,11 +20,11 @@ class OperationTimes : Operation {
         return (_operands.count() < 2)
     }
 
-    override fun performOperationAndAddResultToStack(stack: Stack): Stack {
-        stack.push(
+    override fun performOperationAndAddResultToStack(stackOfOperands: StackOfOperands): StackOfOperands {
+        stackOfOperands.push(
             _operands.first() * _operands.last()
         )
 
-        return stack
+        return stackOfOperands
     }
 }

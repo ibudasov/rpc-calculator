@@ -1,11 +1,11 @@
 package infrastructure
 
 import application.Output
-import domain.Stack
+import domain.StackOfOperands
 
 class CliOutput : Output {
-    override fun outputStack(stack: Stack) {
-        println("stack: $stack")
+    override fun outputStack(stackOfOperands: StackOfOperands) {
+        println("stack: $stackOfOperands")
     }
 
     override fun printLine(line: String) {

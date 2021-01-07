@@ -4,8 +4,8 @@ import domain.operation.OperationFactory
 
 class Calculator {
 
-    fun calculate(input: List<InputElement>): Stack {
-        var stack = Stack()
+    fun calculate(input: List<InputElement>): StackOfOperands {
+        var stack = StackOfOperands()
         val stackHistory = StackStateHistory()
         var positionOfTheCurrentElement = 0
 
