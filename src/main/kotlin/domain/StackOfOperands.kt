@@ -6,15 +6,15 @@ import java.util.*
 
 class StackOfOperands : Stack<Double>() {
     override fun toString(): String {
-        var accunulator = ""
+        var accumulator = ""
 
         val df = DecimalFormat("#.##########")
         df.roundingMode = RoundingMode.CEILING
 
         elements().toList().forEach {
-            accunulator += df.format(it) + " "
+            accumulator += df.format(it) + " "
         }
 
-        return accunulator
+        return accumulator
     }
 }
