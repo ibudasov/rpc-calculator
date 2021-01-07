@@ -2,22 +2,17 @@ package domain
 
 class StackStateHistory {
 
-    private var history: List<StackOfOperands>
-
-    init {
-        history = listOf()
-    }
+    private var history: MutableList<StackOfOperands> = mutableListOf()
 
     fun saveStackState(stackOfOperands: StackOfOperands) {
+        val clonedStack = stackOfOperands.clone()
 
-        val recreatedStack = stackOfOperands.clone()
-
-        history = listOf(recreatedStack).plus(history)
+        history.add(clonedStack as StackOfOperands)
     }
 
     fun getLastSavedStackStateAndRemoveItFromHistory(): StackOfOperands {
-        history = history.drop(1)
+        history = history.dropLast(1).toMutableList()
 
-        return history.first()
+        return history.last()
     }
 }

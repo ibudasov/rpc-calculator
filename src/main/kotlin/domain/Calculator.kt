@@ -1,6 +1,7 @@
 package domain
 
 import domain.operation.OperationFactory
+import java.util.*
 
 class Calculator {
 
@@ -20,7 +21,7 @@ class Calculator {
             }
 
             if (it.isOperand()) {
-                stack = stack.push(it.asOperand())
+                stack.push(it.asOperand())
                 stackHistory.saveStackState(stack)
             }
 
@@ -34,7 +35,7 @@ class Calculator {
                     ) {
                         // doing nothing here, what's needed to happen -- happened in the condition
                     }
-                } catch (e: IllegalStateException) {
+                } catch (e: EmptyStackException) {
                     throw SorryCannotFindSufficientNumberOfParametersInTheStack(operation, positionOfTheCurrentElement)
                 }
 

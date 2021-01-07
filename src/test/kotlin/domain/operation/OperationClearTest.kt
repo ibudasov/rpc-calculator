@@ -18,6 +18,6 @@ internal class OperationClearTest {
         val result = Calculator().calculate(input)
 
         assertEquals("", result.toString())
-        assertEquals(0, result.size())
+        assertEquals(0, result.size)
     }
 }

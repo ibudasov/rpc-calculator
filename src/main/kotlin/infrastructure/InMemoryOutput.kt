@@ -5,11 +5,13 @@ import domain.StackOfOperands
 
 class InMemoryOutput : Output {
 
-    var stacksWhichWereOutput = listOf<StackOfOperands>()
+    var stacksWhichWereOutput = mutableListOf<StackOfOperands>()
     var linesWhichWereOutput = listOf<String>()
 
     override fun outputStack(stackOfOperands: StackOfOperands) {
-        stacksWhichWereOutput = stacksWhichWereOutput.plus(stackOfOperands)
+        val clonedStack = stackOfOperands.clone()
+
+        stacksWhichWereOutput.add(clonedStack as StackOfOperands)
     }
 
     override fun printLine(line: String) {

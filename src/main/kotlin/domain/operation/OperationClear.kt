@@ -14,7 +14,7 @@ class OperationClear : Operation {
     }
 
     override fun performOperationAndAddResultToStack(stackOfOperands: StackOfOperands): StackOfOperands {
-        for (i in 1..stackOfOperands.size()) {
+        for (i in 1..stackOfOperands.size) {
             stackOfOperands.pop()
         }
 
