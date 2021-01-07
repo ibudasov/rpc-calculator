@@ -49,5 +49,4 @@ operator <operator> (position: <pos>): insufficient parameters
 
 ## Todo
 
-- custom `Stack` implementation can go in favour of the one from SDK
 - preserve stack between inputs, so the operations can be chained
